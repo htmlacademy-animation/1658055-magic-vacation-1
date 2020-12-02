@@ -89,13 +89,21 @@
     font-size: 3rem;
   }
 }
-
+.swiper-slide-active .slider__item-text,
+.swiper-slide-next .slider__item-text {
+  opacity: 1;
+  transform: translateX(0);
+}
 .slider__item-text {
   margin-top: 3.6rem;
   margin-bottom: 0;
   max-width: 34rem;
   font-size: 1.8rem;
   line-height: 2rem;
+  opacity: 0;
+  transform: translateX(32px);
+  transition: 0.3s 0.3s ease-in;
+  transition-property: transform, opacity;
 
   @media (min-width: $stop-scaling) {
     margin-top: 36px;
