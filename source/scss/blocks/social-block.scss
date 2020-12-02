@@ -29,12 +29,20 @@
   &::before {
     @include center;
     content: "";
-    width: 100%;
-    height: 100%;
     border-radius: 50%;
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
+    transition-property: width, height;
+    transition-duration: 0.3s, 0.3s;
+    transition-timing-function: cubic-bezier(.51,.8,.46,1.13);
+    width: 0;
+    height: 0;
+
+    .active & {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   svg {
@@ -140,6 +148,10 @@
   .social-block--active & {
     opacity: 1;
     pointer-events: auto;
+    .social-block__link {
+      opacity: 1;
+      margin-top: 0;
+    }
   }
 
   li {
@@ -168,6 +180,7 @@
   color: $c-light;
   border: 2px solid transparent;
   border-radius: 50%;
+  transition: color 0.3s ease;
 
   @media (min-width: $stop-scaling) {
     width: 40px;
@@ -207,6 +220,10 @@
   }
 
   &--fb {
+    opacity: 0;
+    margin-top: 16px;
+    transition-property: opacity, margin-top;
+    transition: 0.3s cubic-bezier(1,.08,.49,.93);
     svg {
       width: 0.8rem;
       height: 1.7rem;
@@ -219,6 +236,10 @@
   }
 
   &--insta {
+    opacity: 0;
+    margin-top: 16px;
+    transition-property: opacity, margin-top;
+    transition: 0.3s 0.15s cubic-bezier(1,.08,.49,.93);
     svg {
       width: 1.5rem;
       height: 1.5rem;
@@ -231,6 +252,10 @@
   }
 
   &--vk {
+    opacity: 0;
+    margin-top: 16px;
+    transition-property: opacity, margin-top;
+    transition: 0.3s 0.3s cubic-bezier(1,.08,.49,.93);
     svg {
       width: 1.7rem;
       height: 1rem;

@@ -125,6 +125,18 @@
   }
 }
 
+.form__field-wrapper {
+  width: calc(100% - 31rem);
+  margin-right: 3rem;
+  .form__field {
+    width: 0%;
+    transition: width 0.3s ease-in;
+  }
+}
+
+.active .form__field {
+  width: 100%;
+}
 .form--result {
   .form__field {
     width: calc(100% - 31rem);

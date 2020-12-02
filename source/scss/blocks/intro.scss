@@ -86,7 +86,16 @@
   }
 }
 
+.active .intro__message {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
 .intro__message {
+  opacity: 0;
+  transform: translateY(1em);
+  transition-property: opacity, transform;
+  transition: 0.3s 0.3s ease-in;
   flex: none;
   width: 50.9rem;
   max-width: 50%;
