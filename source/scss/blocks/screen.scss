@@ -19,6 +19,21 @@
   }
 }
 
+.background-fill-animation {
+  background-color: #5f458c;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 100vh;
+  transition: top 0.3s ease-out;
+  z-index: 1000;
+}
+
+.active .screen--fill-animation:not(.active) .background-fill-animation {
+  top: 0;
+}
+
 .screen__wrapper {
   @include container;
   position: relative;
